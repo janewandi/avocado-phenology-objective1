@@ -1,0 +1,33 @@
+﻿farm_id ,county,stage,phenology_cycle,start_date,end_date
+EMC1,Elgeyo Marakwet,Vegetative_Growth,"Jun, Jul",2024-06-01,2024-07-31
+EMC1,Elgeyo Marakwet,Flowering,"Jul, Aug",2024-07-01,2024-08-31
+EMC1,Elgeyo Marakwet,Fruit_Development,"Sep, Oct",2024-09-01,2024-10-31
+EMC1,Elgeyo Marakwet,Maturity,"Dec, Jan, Feb",2024-12-01,2025-02-28
+EMC2,Elgeyo Marakwet,Vegetative_Growth,"Jun, Jul",2024-06-01,2024-07-31
+EMC2,Elgeyo Marakwet,Flowering,"Jul, Aug",2024-07-01,2024-08-31
+EMC2,Elgeyo Marakwet,Fruit_Development,"Sep, Oct",2024-09-01,2024-10-31
+EMC2,Elgeyo Marakwet,Maturity,"Dec, Jan, Feb",2024-12-01,2025-02-28
+EMC3,Elgeyo Marakwet,Vegetative_Growth,"May, Jun",2024-05-01,2024-06-30
+EMC3,Elgeyo Marakwet,Flowering,,,
+EMC3,Elgeyo Marakwet,Fruit_Development,,,
+EMC3,Elgeyo Marakwet,Maturity,,,
+EMC4,Elgeyo Marakwet,Vegetative_Growth,"Apr, May, Jun",2024-04-01,2024-06-30
+EMC4,Elgeyo Marakwet,Flowering,,,
+EMC4,Elgeyo Marakwet,Fruit_Development,,,
+EMC4,Elgeyo Marakwet,Maturity,,,
+EMB1,Embu,Vegetative_Growth,"Jul, Aug, Sep, Oct, Nov",2024-07-01,2024-11-30
+EMB1,Embu,Flowering,"Aug, Sep, Oct",2024-08-01,2024-10-31
+EMB1,Embu,Fruit_Development,"Nov, Dec, Jan",2024-11-01,2025-01-31
+EMB1,Embu,Maturity,"Mar, Apr, May",2025-03-01,2025-05-31
+EMB2,Embu,Vegetative_Growth,"Aug, Sep, Oct, Nov",2024-08-01,2024-11-30
+EMB2,Embu,Flowering,"Aug, Sep, Oct",2024-08-01,2024-10-31
+EMB2,Embu,Fruit_Development,"Oct, Nov, Dec, Jan",2024-10-01,2025-01-31
+EMB2,Embu,Maturity,"Mar, Apr, May, Jun",2025-03-01,2025-06-30
+EMB3,Embu,Vegetative_Growth,"Jul, Aug, Sep",2024-07-01,2024-09-30
+EMB3,Embu,Flowering,"Aug, Sep",2024-08-01,2024-09-30
+EMB3,Embu,Fruit_Development,"Oct, Nov, Dec, Jan",2024-10-01,2025-01-31
+EMB3,Embu,Maturity,"Apr, May, Jun",2025-04-01,2025-06-30
+EMB4,Embu,Vegetative_Growth,"Jul, Aug, Sep, Oct",2024-07-01,2024-10-31
+EMB4,Embu,Flowering,"Sep, Oct",2024-09-01,2024-10-31
+EMB4,Embu,Fruit_Development,"Nov, Dec, Jan",2024-11-01,2025-01-31
+EMB4,Embu,Maturity,"Mar, Apr, May",2025-03-01,2025-05-31

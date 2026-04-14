@@ -1,0 +1,17 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+.DS_Store
+
+# Ignore large intermediate files
+*.csv~
+*.tmp
+
+# Ignore knitted outputs
+*.html
+*.pdf
+*.docx
+
+# Ignore RStudio temporary files
+*.Rproj.user
