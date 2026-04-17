@@ -3,18 +3,17 @@ title: "Classification of Avocado Phenology Stages Using Fused Sentinel‑2 and 
 author: "Jane Wandi Wanjira Njeru"
 date: "`r Sys.Date()`"
 output:
-  html_document:
-    toc: true
-    toc_depth: 3
-    df_print: paged
   pdf_document:
     toc: true
     toc_depth: 3
     number_sections: true
-
+    latex_engine: xelatex
+  html_document:
+    toc: true
+    toc_depth: 3
+    df_print: paged
 bibliography: references.bib
 csl: apa.csl
-
 editor_options:
   markdown:
     wrap: 72
@@ -197,6 +196,9 @@ cm_embu
 cm_elgeyo
 cm_combined
 ```
+## CART Results
+
+The CART models provide a rule‑based interpretation of how vegetation indices separate avocado phenology stages across the two counties.
 
 ## CART Tree Figures
 
@@ -213,6 +215,8 @@ knitr::include_graphics("figures/CART_Combined.png")
 ```
 
 Together, these results demonstrate that multisensor vegetation indices capture phenological transitions with sufficient sensitivity to support classification across contrasting agroecological zones.
+
+\newpage
 
 # Discussion
 
