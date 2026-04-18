@@ -25,9 +25,11 @@ Avocado is one of Kenya’s most economically significant horticultural crops, a
 
 Despite this growth, premature harvesting remains widespread, largely because farmers and value‑chain actors lack scalable, objective tools for determining physiological maturity across diverse smallholder orchards. Traditional maturity assessments, such as destructive sampling and dry‑matter analysis, are accurate but costly, labour‑intensive, and spatially limited, making them unsuitable for routine monitoring at regional scales [@whiley1986phenology; @salazar1998flowering].
 
-Remote sensing offers a promising alternative. Multisensor satellite platforms such as Sentinel‑2 and Landsat 8/9 provide dense, high‑resolution time series capable of capturing canopy dynamics and phenological transitions in perennial crops [@bolton2021continental; @zhang2003monitoring]. Recent work has demonstrated that Sentinel‑2 time‑series vegetation indices can reliably track avocado phenology across flowering, vegetative growth, fruit development, and maturity stages [@Rahman2022]. However, applications in Kenyan smallholder systems remain limited due to heterogeneous canopies, intercropping, and variable management practices [@jaetzold2012farm]. Similar challenges have been documented in other African smallholder fruit‑tree systems, where Sentinel‑2 phenological metrics have nonetheless shown strong potential for crop discrimination and monitoring [@Chabalala2023].
+In Kenya, avocado production spans diverse agroecological zones. The two study regions, Embu and Elgeyo Marakwet, illustrate this variability. Embu lies in the warm, humid mid‑elevation foothills of Mt. Kenya (≈1,200–1,800 m), characterised by deep volcanic Nitisols, high annual rainfall and intensive smallholder orchards often intercropped with other crops (Jaetzold et al., 2012; @jaetzold2012farm; Embu County CIDP, 2018; @embuCIDP2018). In contrast, Elgeyo Marakwet occupies cooler highland conditions along the Rift Valley escarpment (≈1,800–2,600 m), with steeper terrain, higher irradiance, more variable rainfall, and wider orchard spacing (Jaetzold et al., 2012; @jaetzold2012farm; Elgeyo Marakwet County CIDP, 2018; @elgeyoCIDP2018). These environmental and management contrasts influence canopy water dynamics, vegetative growth rates, and phenological timing, making them ideal for evaluating the robustness of remote‑sensing‑based phenology monitoring across heterogeneous smallholder systems.
 
-Embu and Elgeyo Marakwet counties provide contrasting agroecological and socioeconomic contexts for evaluating such approaches. Embu is an established avocado‑producing region with strong market linkages, while Elgeyo Marakwet is an emerging production zone with expanding commercial interest [@jaetzold2012farm].
+Remote sensing offers a promising alternative. Sentinel‑2 and Landsat 8/9 deliver 10–30 m spatial resolution and frequent revisit intervals, producing dense time series capable of capturing canopy dynamics and phenological transitions in perennial crops [@bolton2021continental; @zhang2003monitoring]. Recent work has demonstrated that Sentinel‑2 time‑series vegetation indices can reliably track avocado phenology across flowering, vegetative growth, fruit development, and maturity stages [@Rahman2022]. However, applications in Kenyan smallholder systems remain limited due to heterogeneous canopies, intercropping and variable management practices [@jaetzold2012farm]. Similar challenges have been documented in other African smallholder fruit‑tree systems, where Sentinel‑2 phenological metrics have nonetheless shown strong potential for crop discrimination and monitoring [@Chabalala2023].
+
+Embu is an established avocado‑producing region with strong market linkages, while Elgeyo Marakwet is an emerging production zone with expanding commercial interest (Elgeyo Marakwet County CIDP, 2018; @elgeyoCIDP2018).
 
 Objective 1 of this study is to demonstrate that fused Sentinel‑2 and Landsat spectral indices can be used to classify avocado phenological stages in Embu and Elgeyo Marakwet. This phenology classification provides the foundation for subsequent modelling of maturity timing and supports the development of scalable, spatially explicit decision‑support tools for Kenya’s avocado value chain. Such tools align with broader advances in fruit‑tree monitoring and harvest‑timing technologies that emphasize the need for non‑destructive, remotely sensed indicators of crop development [@Anderson2021].
 
@@ -39,18 +41,13 @@ The study was conducted in two major Hass avocado‑producing counties in Kenya:
 
 Farm‑level GPS points and digitized field boundaries were collected for all sampled orchards.
 
-Phenology information was obtained through farmer‑reported observations collected using a structured KoboToolbox survey instrument. Farmers were asked to describe the dominant phenological state of their avocado trees at the time of each visit or interview. These descriptions were standardized and mapped onto four discrete phenology stages commonly used in avocado phenology literature:
-
-- Flowering  
-- Vegetative growth  
-- Fruit development  
-- Maturity
+Phenology information was obtained through farmer‑reported observations collected using a structured KoboToolbox survey instrument. Farmers were asked to describe the dominant phenological state of their avocado trees at the time of each visit or interview. These descriptions were standardized and mapped onto four discrete phenology stages commonly used in avocado phenology literature.  They are; Flowering, Vegetative growth, Fruit development and Maturity.
 
 Published descriptions of Hass avocado phenology were used to interpret farmer responses and ensure that stage definitions were biologically consistent across Embu and Elgeyo Marakwet. Each observation was timestamped, and dates were converted into a continuous month number (1–12 + decimal fraction) to support temporal modelling and alignment with satellite observations.
 
 ## Satellite data acquisition
 
-Sentinel‑2 MSI and Landsat 8/9 OLI surface reflectance products were accessed via Google Earth Engine, following operational EO data methodologies for agricultural monitoring [@Suarez2020]. Cloud masking was performed using Sentinel‑2 Cloud Probability and CFMask, following established best practices for multisensor phenology monitoring [@roy2016landsat; @claverie2018harmonized].
+Sentinel‑2 Multispectral Instrument (MSI) and Landsat 8/9 Operational Land Imager (OLI) surface reflectance products were accessed via Google Earth Engine, following operational EO data methodologies for agricultural monitoring [@Suarez2020]. The analysis used the spectral bands required for vegetation index computation, including the visible (Blue, Green, Red), near‑infrared (NIR), red‑edge (RE1–RE4), and shortwave infrared (SWIR1–SWIR2) bands from Sentinel‑2 MSI, and the corresponding Blue, Green, Red, NIR, and SWIR bands from Landsat OLI. Cloud masking was performed using Sentinel‑2 Cloud Probability and Landsat CFMask, following established best practices for multisensor phenology monitoring [@roy2016landsat; @claverie2018harmonized].
 
 Only cloud‑free pixels intersecting farm polygons were retained.
 
@@ -78,7 +75,7 @@ This fusion increased revisit frequency from 5–16 days to 3–5 days, consiste
 
 ## Derivation of spectral indices
 
-Vegetation indices (NDVI, EVI, NDWI, NDRE) were derived in GEE for each orchard polygon. These indices capture key physiological processes associated with avocado phenology [@huete2002modis; @gao1996ndwi; @gitelson2005remote] and have recently been shown to track seasonal avocado phenology transitions in commercial orchards [@Rahman2022].
+Vegetation indices (NDVI, EVI, NDWI, NDRE) were derived in GEE for each orchard polygon. These indices capture complementary physiological processes associated with avocado canopy development. NDVI quantifies canopy greenness and photosynthetic activity, increasing during flowering and early vegetative growth but saturating in dense evergreen canopies (Huete et al., 2002; @huete2002modis). EVI enhances sensitivity to canopy structure and leaf area, reducing saturation effects and capturing structural changes during vegetative flush (Huete et al., 2002; @huete2002modis). NDWI measures canopy water content and is strongly responsive to the substantial increase in leaf and fruit water during early fruit expansion (Gao, 1996; @gao1996ndwi). NDRE, derived from the red‑edge region, is sensitive to chlorophyll concentration and early‑season pigment dynamics, providing additional discrimination during flowering and initial vegetative growth (Gitelson et al., 2005; @gitelson2005remote). Together, these indices provide a physiologically meaningful representation of avocado phenology and have been shown to track seasonal transitions in commercial orchards (Rahman et al., 2022; @Rahman2022).
 
 ## Remote sensing data and feature engineering
 
@@ -102,7 +99,7 @@ Each phenology observation was matched to the closest satellite date within ±3 
 
 ## CART model development
 
-Three CART models were trained:
+Classification and Regression Trees (CART) is a supervised machine‑learning classification technique that learns decision rules from labelled training data to predict categorical outcomes. Three CART models were trained:
 
 - Embu  
 - Elgeyo Marakwet  
@@ -223,7 +220,7 @@ The stage‑pair heatmap and confusion matrices further confirmed that Flowering
 
 Overall, these findings demonstrate that NDWI provides the strongest phenological signal, NDVI and EVI offer largely redundant structural information, and NDRE contributes early‑season chlorophyll sensitivity. These insights have direct implications for remote‑sensing‑based decision‑support systems, particularly for detecting Flowering and early Fruit Development, which are key management windows for irrigation, nutrient application, and pest risk assessment. Advances in fruit‑tree monitoring technologies similarly emphasize the value of non‑destructive, remotely sensed indicators for supporting harvest timing and orchard management [@Anderson2021].
 
-The consistency of results across two contrasting agroecological zones suggests that fused HLS data provide a robust basis for phenology classification in smallholder avocado systems. The ability to detect phenological transitions using freely available satellite data has important implications for maturity assessment, harvest planning, and decision‑support tools within Kenya’s avocado value chain. These findings provide a strong foundation for further research, including the development of phenology‑based maturity and yield prediction models, consistent with recent time‑series remote‑sensing approaches in perennial fruit crops [@Torgbor2023].
+The consistency of results across the two study regions is notable given the strong agroecological contrasts described in Section 2.1. Despite differences in elevation, temperature regimes, rainfall patterns, and orchard structure, fused HLS data produced stable phenological trajectories transitions using freely available satellite data has important implications for maturity assessment, harvest planning, and decision‑support tools within Kenya’s avocado value chain. These findings provide a strong foundation for further research, including the development of phenology‑based maturity and yield prediction models, consistent with recent time‑series remote‑sensing approaches in perennial fruit crops [@Torgbor2023].
 
 # Reproducibility
 
